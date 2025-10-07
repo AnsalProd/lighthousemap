@@ -108,9 +108,9 @@
 
     .shelf{margin-top:12px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:10px;border-radius:12px;display:flex;align-items:center;justify-content:space-between}
     .entities{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-    .entity{background:var(--glass-2);padding:10px;border-radius:10px;min-width:140px}
+    .entities{background:var(--glass-2);padding:10px;border-radius:10px;min-width:140px}
     .entity h4{margin:0;color:#fff}
-    .entity p{margin:6px 0 0 0;font-size:13px;color:#d7cdbf}
+    .entity1 p{margin:6px 0 0 0;font-size:13px;color:#d7cdbf}
 
     /* Carousel updates */
     .ticker{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;background:linear-gradient(90deg, rgba(0,0,0,0.16), rgba(0,0,0,0.08))}
