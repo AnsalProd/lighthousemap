@@ -37,7 +37,26 @@
   const toggleBtn = document.querySelector('.toggle-btn');
   toggleBtn.addEventListener('click', ()=>{
     sidebar.classList.toggle('hidden');
+    toggleBtn.classList.toggle('move-left');
     toggleBtn.style.transform = sidebar.classList.contains('hidden') ? 'translateX(0)' : 'translateX(-250px)';
+     window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+       });
+  });
+  document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
+      sidebar.classList.add('hidden');
+      toggleBtn.classList.remove('move-left');
+    }
+  });
+
+  // إذا ضغط المستخدم على أي قسم داخل الشريط، يُغلق أيضًا
+  sidebar.addEventListener('click', (e) => {
+    if (e.target.classList.contains('nav-item')) {
+      sidebar.classList.add('hidden');
+      toggleBtn.classList.remove('move-left');
+    }
   });
 
   // Updates ticker
@@ -57,4 +76,5 @@
   setInterval(tick,4000);
 
 })();
+
 
