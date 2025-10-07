@@ -57,8 +57,7 @@
   e.stopPropagation();
 
   // فقط حرّك للأعلى إذا الشريط مغلق
-  const willOpen = sidebar.classList.contains('hidden');
-  if (willOpen) {
+   if (window.innerWidth <= 768) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -82,6 +81,7 @@
   setInterval(tick,4000);
 
 })();
+
 
 
 
