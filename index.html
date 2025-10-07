@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>منارة الربيع — تجربة أولية</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="المنارة الذكية — واجهة تفاعلية أولية للربيع العربي الثقافي" />
+</head>
+<body>
+  <div class="app">
+    <!-- SIDEBAR -->
+     
+    <button class="toggle-btn" id="sidebarToggle">☰</button>
+    <aside class="sidebar hidden">
+      <div class="brand">
+        <div class="logo">م</div>
+        <div>
+          <h3>منارة الربيع</h3>
+          <div class="small">لجنة المسابقات</div>
+        </div>
+      </div>
+
+      <nav class="nav" id="mainNav">
+        <div class="nav-item active" data-section="library">
+          <div class="icon">📚</div>
+          <div class="label">المكتبة</div>
+        </div>
+        <div class="nav-item" data-section="stories">
+          <div class="icon">📖</div>
+          <div class="label">غرفة القصص</div>
+        </div>
+        <div class="nav-item" data-section="leaders">
+          <div class="icon">🧭</div>
+          <div class="label">قاعة القادة</div>
+        </div>
+        <div class="nav-item" data-section="archive">
+          <div class="icon">🗂️</div>
+          <div class="label">قبو الأرشيفات</div>
+        </div>
+        <div class="nav-item" data-section="parties">
+          <div class="icon">🎉</div>
+          <div class="label">قاعة الحفلات</div>
+        </div>
+        <div class="nav-item" data-section="shop">
+          <div class="icon">🛍️</div>
+          <div class="label">المتجر</div>
+        </div>
+        <div class="nav-item" data-section="feedback">
+          <div class="icon">💬</div>
+          <div class="label">آراء المتابعين</div>
+        </div>
+      </nav>
+
+      <div class="small">اضغط على أي قسم لعرض محتواه</div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- HERO CARD -->
+      <section class="card hero">
+        <div class="hero-left">
+          <div class="title-illum">منارة الربيع</div>
+          <div class="subtitle">مساحة إبداعية تجمع الكتاب والمبدعين، منصة لتبادل الأفكار والمسابقات.</div>
+
+          <div class="shelf">
+            <div>
+              <strong>التعريف:</strong>
+              <div id="springIntro">الربيع العربي الثقافي — مساحة حيوية للكتابة والإبداع.</div>
+            </div>
+            <div class="hero-right">
+              <div style="font-size:12px;color:#f7e8d8">شعار الربيع</div>
+              <div style="width:80px;height:80px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ffb67a)"></div>
+            </div>
+          </div>
+
+          <div class="entities" id="entities">
+            <!-- كائنات الـ7 ستُضاف هنا ديناميكياً أو يدويًا لاحقًا -->
+            <div class="entity"><h4>لجنة المسابقات</h4><p>محرك المنارة</p></div>
+            <div class="entity"><h4>فريق النقد</h4><p>صوت التحليل</p></div>
+            <div class="entity"><h4>لجنة التدريبات</h4><p>ميدان التطوير</p></div>
+            <div class="entity"><h4>فرسان اللغة</h4><p>حماة البلاغة</p></div>
+            <div class="entity"><h4>جنود التصميم</h4><p>صانعو الهوية</p></div>
+            <div class="entity"><h4>فريق الإعلام</h4><p>راسل الحكاية</p></div>
+            <div class="entity"><h4>أكاديمية الإبداع</h4><p>بوابة التعلم</p></div>
+          </div>
+
+          <div style="margin-top:14px">
+            <div class="ticker card" style="display:flex;align-items:center;justify-content:space-between">
+              <div style="display:flex;align-items:center;gap:12px"><div class="dot"></div><strong>أحدث التحديثات</strong></div>
+              <div class="updates" id="updates" style="flex:1;margin-right:18px"></div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Content sections (single-page switching) -->
+      <section class="card sections" id="contentSections">
+        <div class="section" id="librarySection">
+          <h3>📚 المكتبة</h3>
+          <p>مكان أدب الربيع: كتب، مقالات ومقتطفات دروس.</p>
+        </div>
+
+        <div class="section" id="storiesSection">
+          <h3>📖 غرفة القصص</h3>
+          <p>قصص المتابعين والقادة والأعضاء.</p>
+        </div>
+
+        <div class="section" id="leadersSection">
+          <h3>🧭 قاعة القادة</h3>
+          <p>نبذة، نصائح ورسائل من القادة.</p>
+        </div>
+
+        <div class="section" id="archiveSection">
+          <h3>🗂️ قبو الأرشيفات</h3>
+          <p>المسابقات والفعاليات السابقة والنتائج.</p>
+        </div>
+
+        <div class="section" id="partiesSection">
+          <h3>🎉 قاعة الحفلات</h3>
+          <p>الإعلانات، المسابقات والتحديات الترفيهية.</p>
+        </div>
+
+        <div class="section" id="shopSection">
+          <h3>🛍️ المتجر</h3>
+          <p>خدمات ولوازم وفعاليات حصرية للجنة.</p>
+        </div>
+
+        <div class="section" id="feedbackSection">
+          <h3>💬 آراء المتابعين</h3>
+          <p>آراء ومراجعات ونتائج استبيانات.</p>
+        </div>
+      </section>
+
+      <!-- Footer art & CTAs -->
+      <section class="card art-row">
+        <div class="art">
+          <h3>رمز الإبداع</h3>
+          <p>رسم تعبيري عن الإبداع.</p>
+          <div class="cta"><button style="background:var(--accent);border:none;padding:8px 12px;border-radius:8px;color:#111;cursor:pointer">اذهب لمنصة الإبداع</button></div>
+        </div>
+
+        <div class="art">
+          <h3>رمز المسابقات</h3>
+          <p>مسابقاتنا ونماذجها.</p>
+          <div class="cta"><button style="background:var(--accent);border:none;padding:8px 12px;border-radius:8px;color:#111;cursor:pointer">اذهب للمنصة</button></div>
+        </div>
+
+        <div class="art">
+          <h3>رمز النقد</h3>
+          <p>مكان للتقييم البنّاء.</p>
+          <div class="cta"><button style="background:var(--accent);border:none;padding:8px 12px;border-radius:8px;color:#111;cursor:pointer">اذهب للمنصة</button></div>
+        </div>
+      </section>
+      <!-- باقي الصفحة -->
+
+<!-- Footer / Contact Section -->
+<section class="contact-us">
+  <div class="app-footer">
+    <div class="card contact">
+      <h4>تواصل معنا</h4>
+      <p style="font-size:13px">يمكنك إضافة إيميل، رابط تيليغرام أو أي وسيلة هنا.</p>
+      <div style="margin-top:8px">
+        <button style="background:var(--accent);border:none;padding:8px 12px;border-radius:8px;color:#111;cursor:pointer">
+          مراسلتنا
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+    </main>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
