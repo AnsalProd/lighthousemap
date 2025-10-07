@@ -29,9 +29,6 @@
       document.getElementById('contentSections').scrollIntoView({behavior:'smooth'});
       sidebar.classList.add('hidden');
       toggleBtn.classList.remove('move-left');
-       if (window.innerWidth <= 768) {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
     });
   });
 
@@ -41,6 +38,7 @@
 
   // إغلاق الشريط عند الضغط في أي مكان خارج
   document.addEventListener('click', (e) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
       sidebar.classList.add('hidden');
       toggleBtn.classList.remove('move-left');
@@ -49,6 +47,7 @@
 
   // إغلاقه أيضًا عند الضغط على أي قسم داخله
   sidebar.addEventListener('click', (e) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     if (e.target.classList.contains('nav-item')) {
       sidebar.classList.add('hidden');
       toggleBtn.classList.remove('move-left');
@@ -60,7 +59,6 @@
   e.stopPropagation();
 
   // فقط حرّك للأعلى إذا الشريط مغلق
-   if (window.innerWidth <= 768) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -84,6 +82,7 @@
   setInterval(tick,4000);
 
 })();
+
 
 
 
