@@ -20,7 +20,7 @@
   }
   showSection('library');
 
-  navItems.forEach(item=>{
+    navItems.forEach(item=>{
     item.addEventListener('click', ()=>{
       navItems.forEach(i=>i.classList.remove('active'));
       item.classList.add('active');
@@ -28,26 +28,13 @@
       showSection(key);
       document.getElementById('contentSections').scrollIntoView({behavior:'smooth'});
       sidebar.classList.add('hidden');
-      toggleBtn.style.transform = 'translateX(0)';
+      toggleBtn.classList.remove('move-left');
     });
   });
 
   // Sidebar toggle
   const sidebar = document.querySelector('.sidebar');
   const toggleBtn = document.querySelector('.toggle-btn');
-
-  toggleBtn.addEventListener('click', () => {
-    // تفعيل حركة الصعود للأعلى
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    // تفعيل / تعطيل الشريط الجانبي
-    sidebar.classList.toggle('hidden');
-    toggleBtn.classList.toggle('move-left');
-
-    // إضافة حركة ارتداد صغيرة للزر
-    toggleBtn.classList.add('clicked');
-    setTimeout(() => toggleBtn.classList.remove('clicked'), 500); // إزالة الحركة بعد نصف ثانية
-  });
 
   // إغلاق الشريط عند الضغط في أي مكان خارج
   document.addEventListener('click', (e) => {
@@ -64,6 +51,20 @@
       toggleBtn.classList.remove('move-left');
     }
   });
+
+  
+  toggleBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+
+  // فقط حرّك للأعلى إذا الشريط مغلق
+  const willOpen = sidebar.classList.contains('hidden');
+  if (willOpen) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  sidebar.classList.toggle('hidden');
+  toggleBtn.classList.toggle('move-left');
+});
   // Updates ticker
   const updates = [
     'تم الإعلان عن مسابقة جديدة في لجنة المسابقات — شارك الآن!',
@@ -81,6 +82,7 @@
   setInterval(tick,4000);
 
 })();
+
 
 
 
