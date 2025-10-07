@@ -1,130 +1,0 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>منارة الربيع — تجربة أولية</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="description" content="المنارة الذكية — واجهة تفاعلية أولية للربيع العربي الثقافي" />
-</head>
-<body>
-  <div class="app">
-
-    <!-- SIDEBAR -->
-    <button class="toggle-btn" id="sidebarToggle">☰</button>
-    <aside class="sidebar hidden">
-      <div class="brand">
-        <div class="logo">🌅</div>
-        <div>
-          <h3>منارة الربيع</h3>
-          <div class="small">لجنة المسابقات</div>
-        </div>
-      </div>
-
-      <nav class="nav" id="mainNav">
-        <div class="nav-item active" data-section="library">
-          <div class="icon">📚</div><div class="label">المكتبة</div>
-        </div>
-        <div class="nav-item" data-section="stories">
-          <div class="icon">📖</div><div class="label">غرفة القصص</div>
-        </div>
-        <div class="nav-item" data-section="leaders">
-          <div class="icon">🧭</div><div class="label">قاعة القادة</div>
-        </div>
-        <div class="nav-item" data-section="archive">
-          <div class="icon">🗂️</div><div class="label">قبو الأرشيفات</div>
-        </div>
-        <div class="nav-item" data-section="parties">
-          <div class="icon">🎉</div><div class="label">قاعة الحفلات</div>
-        </div>
-        <div class="nav-item" data-section="shop">
-          <div class="icon">🛍️</div><div class="label">المتجر</div>
-        </div>
-        <div class="nav-item" data-section="feedback">
-          <div class="icon">💬</div><div class="label">آراء المتابعين</div>
-        </div>
-      </nav>
-
-      <div class="small">اضغط على أي قسم لعرض محتواه</div>
-    </aside>
-
-    <!-- MAIN -->
-    <main class="main">
-      
-      <!-- HERO CARD -->
-      <section class="card hero">
-        <div class="hero-left">
-          <div class="title-row">
-            <div class="hero-logo">
-              <img src="https://i.postimg.cc/pr8WYrHN/p-1826ym72a1.png" alt="منارة الربيع">
-            </div>
-            <div class="title-illum">منارة الربيع</div>
-          </div>
-          <div class="subtitle">مساحة إبداعية تجمع الكتاب والمبدعين، منصة لتبادل الأفكار والمسابقات.</div>
-
-          <div class="shelf">
-            <div>
-              <strong>التعريف:</strong>
-              <div id="springIntro">الربيع العربي الثقافي — مساحة حيوية للكتابة والإبداع.</div>
-            </div>
-          </div>
-
-          <div class="entities" id="entities">
-            <div class="entity entity1"><h4>لجنة المسابقات</h4><p>محرك المنارة</p></div>
-            <div class="entity entity2"><h4>فريق النقد</h4><p>صوت التحليل</p></div>
-            <div class="entity entity3"><h4>لجنة التدريبات</h4><p>ميدان التطوير</p></div>
-            <div class="entity entity4"><h4>فرسان اللغة</h4><p>حماة البلاغة</p></div>
-            <div class="entity entity5"><h4>جنود التصميم</h4><p>صانعو الهوية</p></div>
-            <div class="entity entity6"><h4>فريق الإعلام</h4><p>راسل الحكاية</p></div>
-            <div class="entity entity7"><h4>أكاديمية الإبداع</h4><p>بوابة التعلم</p></div>
-          </div>
-
-          <div class="ticker card">
-            <div class="dot-row">
-              <div class="dot"></div><strong>أحدث التحديثات</strong>
-            </div>
-            <div class="updates" id="updates"></div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Content sections -->
-      <section class="card sections" id="contentSections">
-        <div class="section" id="librarySection"><h3>📚 المكتبة</h3><p>مكان أدب الربيع: كتب، مقالات ومقتطفات دروس.</p></div>
-        <div class="section" id="storiesSection"><h3>📖 غرفة القصص</h3><p>قصص المتابعين والقادة والأعضاء.</p></div>
-        <div class="section" id="leadersSection"><h3>🧭 قاعة القادة</h3><p>نبذة، نصائح ورسائل من القادة.</p></div>
-        <div class="section" id="archiveSection"><h3>🗂️ قبو الأرشيفات</h3><p>المسابقات والفعاليات السابقة والنتائج.</p></div>
-        <div class="section" id="partiesSection"><h3>🎉 قاعة الحفلات</h3><p>الإعلانات، المسابقات والتحديات الترفيهية.</p></div>
-        <div class="section" id="shopSection"><h3>🛍️ المتجر</h3><p>خدمات ولوازم وفعاليات حصرية للجنة.</p></div>
-        <div class="section" id="feedbackSection"><h3>💬 آراء المتابعين</h3><p>آراء ومراجعات ونتائج استبيانات.</p></div>
-      </section>
-
-      <!-- Footer art & CTAs -->
-      <section class="card art-row">
-        <div class="art">
-          <p>مسابقاتنا البرتقالية.</p>
-          <img src="https://i.postimg.cc/CMfxVPqS/Untitled261-20251003235117.png">
-          <div class="cta"><a href="https://www.instagram.com/criticsteamas" target="_blank">منصة الانستاغرام</a></div>
-        </div>
-        <div class="art">
-          <p>مكان للتقييم البنّاء.</p>
-          <img src="https://i.postimg.cc/L6t4JJDx/Untitled240-20251008000504.png">
-          <div class="cta"><a href="https://t.me/Contest_Team" target="_blank">منصة التيليغرام</a></div>
-        </div>
-      </section>
-
-      <!-- Footer / Contact -->
-      <section class="contact-us">
-        <div class="contact">
-          <h4>تواصل معنا على منصة أنستغرام الخاصة بالربيع</h4>
-          <button><a href="https://www.instagram.com/arabicspringpro" target="_blank">انستغرام</a></button>
-        </div>
-      </section>
-
-    </main>
-
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
