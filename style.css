@@ -175,3 +175,66 @@
   border-radius: 10px;
   object-fit: cover;
 }
+.entity1 {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('https://i.postimg.cc/Hx3Y6RJR/649ef0a8-3c4a-4730-b279-d214aab86a31.png');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 18px;
+  border-radius: var(--radius);
+}
+.entity2 {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('https://i.postimg.cc/rpQ33kJJ/p-1826hhzst2.png');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 18px;
+  border-radius: var(--radius);
+}
+.entity3 {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('https://i.postimg.cc/XY8njtL6/31f9c961-7597-48f8-81e8-23882e2eee66.png');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 18px;
+  border-radius: var(--radius);
+}
+.entity4 {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('https://i.postimg.cc/dtcF8JSq/p-1826njvi85.png');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 18px;
+  border-radius: var(--radius);
+}
+.entity5 {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('https://i.postimg.cc/1XHvn0jH/p-1826xt1q84.png');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 18px;
+  border-radius: var(--radius);
+}
+.entity6 {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('https://i.postimg.cc/Hsnw9CJK/11a5699b-d439-4de1-852d-c4a7d2c67a12.png');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 18px;
+  border-radius: var(--radius);
+}
+.entity7 {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('https://i.postimg.cc/qMNKCXS7/p-1826wwb7j3.png');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 18px;
+  border-radius: var(--radius);
+}
