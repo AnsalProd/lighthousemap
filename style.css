@@ -9,6 +9,33 @@
   --transition:300ms cubic-bezier(.2,.9,.2,1);
   font-family:'Cairo', system-ui, Arial, sans-serif;
 }
+html, body {
+  overflow-x: hidden; /* يمنع الحركة يمين ويسار */
+}
+
+.entities {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 100%; /* تأكد من عدم تجاوز الشاشة */
+  overflow: hidden;
+}
+
+.entities .entity {
+  min-width: 120px;
+  max-width: 200px; /* يحد من حجم الكروت */
+  flex: 1 1 150px; /* مرونة للكروت حسب حجم الشاشة */
+}
+
+.hero-left {
+  width: 100%; /* لضمان عدم تجاوز عرض الشاشة */
+}
+
+.hero .title-row {
+  flex-wrap: wrap; /* إذا كان العنوان + الشعار طويلين، ينزل للشاشة الصغيرة */
+  gap: 15px;
+}
 
 *{box-sizing:border-box}
 html, body{height:100%; margin:0; background:var(--bg-dark); color:var(--muted);}
@@ -120,3 +147,4 @@ a{color:inherit;text-decoration:none;}
   .art-row{flex-direction:column;align-items:center;}
   .art img{width:70%;}
 }
+
