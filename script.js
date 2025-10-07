@@ -29,6 +29,9 @@
       document.getElementById('contentSections').scrollIntoView({behavior:'smooth'});
       sidebar.classList.add('hidden');
       toggleBtn.classList.remove('move-left');
+       if (window.innerWidth <= 768) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
     });
   });
 
@@ -81,6 +84,7 @@
   setInterval(tick,4000);
 
 })();
+
 
 
 
