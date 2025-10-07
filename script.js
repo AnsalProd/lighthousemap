@@ -35,15 +35,21 @@
   // Sidebar toggle
   const sidebar = document.querySelector('.sidebar');
   const toggleBtn = document.querySelector('.toggle-btn');
-  toggleBtn.addEventListener('click', ()=>{
+
+  toggleBtn.addEventListener('click', () => {
+    // تفعيل حركة الصعود للأعلى
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // تفعيل / تعطيل الشريط الجانبي
     sidebar.classList.toggle('hidden');
     toggleBtn.classList.toggle('move-left');
-    toggleBtn.style.transform = sidebar.classList.contains('hidden') ? 'translateX(0)' : 'translateX(-250px)';
-     window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-       });
+
+    // إضافة حركة ارتداد صغيرة للزر
+    toggleBtn.classList.add('clicked');
+    setTimeout(() => toggleBtn.classList.remove('clicked'), 500); // إزالة الحركة بعد نصف ثانية
   });
+
+  // إغلاق الشريط عند الضغط في أي مكان خارج
   document.addEventListener('click', (e) => {
     if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
       sidebar.classList.add('hidden');
@@ -51,14 +57,13 @@
     }
   });
 
-  // إذا ضغط المستخدم على أي قسم داخل الشريط، يُغلق أيضًا
+  // إغلاقه أيضًا عند الضغط على أي قسم داخله
   sidebar.addEventListener('click', (e) => {
     if (e.target.classList.contains('nav-item')) {
       sidebar.classList.add('hidden');
       toggleBtn.classList.remove('move-left');
     }
   });
-
   // Updates ticker
   const updates = [
     'تم الإعلان عن مسابقة جديدة في لجنة المسابقات — شارك الآن!',
@@ -76,5 +81,6 @@
   setInterval(tick,4000);
 
 })();
+
 
 
