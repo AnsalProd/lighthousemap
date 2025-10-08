@@ -20,7 +20,7 @@
   }
   showSection('library');
 
-    navItems.forEach(item=>{
+  navItems.forEach(item=>{
     item.addEventListener('click', ()=>{
       navItems.forEach(i=>i.classList.remove('active'));
       item.classList.add('active');
@@ -38,7 +38,6 @@
 
   // إغلاق الشريط عند الضغط في أي مكان خارج
   document.addEventListener('click', (e) => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
     if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
       sidebar.classList.add('hidden');
       toggleBtn.classList.remove('move-left');
@@ -47,7 +46,6 @@
 
   // إغلاقه أيضًا عند الضغط على أي قسم داخله
   sidebar.addEventListener('click', (e) => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
     if (e.target.classList.contains('nav-item')) {
       sidebar.classList.add('hidden');
       toggleBtn.classList.remove('move-left');
@@ -55,15 +53,18 @@
   });
 
   
-   toggleBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
+  toggleBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+
+  // فقط حرّك للأعلى إذا الشريط مغلق
+  const willOpen = sidebar.classList.contains('hidden');
+  if (willOpen) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-    // فتح أو إغلاق الشريط بشكل طبيعي (overlay)
-    sidebar.classList.toggle('hidden');
-    toggleBtn.classList.toggle('move-left');
-  });
-
+  sidebar.classList.toggle('hidden');
+  toggleBtn.classList.toggle('move-left');
+});
   // Updates ticker
   const updates = [
     'تم الإعلان عن مسابقة جديدة في لجنة المسابقات — شارك الآن!',
@@ -81,11 +82,6 @@
   setInterval(tick,4000);
 
 })();
-
-
-
-
-
 
 
 
