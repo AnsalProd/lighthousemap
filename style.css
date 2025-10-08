@@ -168,7 +168,6 @@ a{color:inherit;text-decoration:none;}
 /* Responsive */
 @media(max-width:800px){
   .app{flex-direction:column;}
-  .sidebar{position:relative;width:100%;transform:translateX(0);height:auto;}
   .main{margin-right:0;}
   .hero-left { width: 100%; }
   .hero{flex-direction:column;  gap: 12px;}
@@ -177,5 +176,6 @@ a{color:inherit;text-decoration:none;}
   .art-row{flex-direction:column;align-items:center;}
   .art img{width:70%;}
 }
+
 
 
