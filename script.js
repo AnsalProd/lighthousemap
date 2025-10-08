@@ -55,16 +55,15 @@
   });
 
   
-  toggleBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-
-  // فقط حرّك للأعلى إذا الشريط مغلق
+   toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
 
-  sidebar.classList.toggle('hidden');
-  toggleBtn.classList.toggle('move-left');
-});
+    // فتح أو إغلاق الشريط بشكل طبيعي (overlay)
+    sidebar.classList.toggle('hidden');
+    toggleBtn.classList.toggle('move-left');
+  });
+
   // Updates ticker
   const updates = [
     'تم الإعلان عن مسابقة جديدة في لجنة المسابقات — شارك الآن!',
@@ -82,6 +81,7 @@
   setInterval(tick,4000);
 
 })();
+
 
 
 
