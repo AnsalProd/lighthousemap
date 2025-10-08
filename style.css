@@ -9,33 +9,6 @@
   --transition:300ms cubic-bezier(.2,.9,.2,1);
   font-family:'Cairo', system-ui, Arial, sans-serif;
 }
-html, body {
-  overflow-x: hidden; /* يمنع الحركة يمين ويسار */
-}
-
-.entities {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  max-width: 100%; /* تأكد من عدم تجاوز الشاشة */
-  overflow: hidden;
-}
-
-.entities .entity {
-  min-width: 120px;
-  max-width: 200px; /* يحد من حجم الكروت */
-  flex: 1 1 150px; /* مرونة للكروت حسب حجم الشاشة */
-}
-
-.hero-left {
-  width: 100%; /* لضمان عدم تجاوز عرض الشاشة */
-}
-
-.hero .title-row {
-  flex-wrap: wrap; /* إذا كان العنوان + الشعار طويلين، ينزل للشاشة الصغيرة */
-  gap: 15px;
-}
 
 *{box-sizing:border-box}
 html, body{height:100%; margin:0; background:var(--bg-dark); color:var(--muted);}
@@ -45,44 +18,27 @@ a{color:inherit;text-decoration:none;}
 .app{display:flex; flex-direction:row; min-height:100vh; max-width:1400px; margin:18px auto; gap:18px; padding:0 12px}
 
 /* Sidebar */
-/* الشريط الجانبي — يظهر فوق المحتوى */
 .sidebar {
-  position: fixed;
-  top: 0;
-  right: 0; /* لأنه RTL */
-  width: 250px;
-  height: 100vh;
-  background: #111;
-  box-shadow: -3px 0 10px rgba(0,0,0,0.4);
-  transition: transform 0.4s ease;
-  transform: translateX(100%); /* مخفي تمامًا خارج الشاشة */
-  z-index: 9999;
+  width:250px;
+  position:fixed; right:0; top:0; height:100%;
+  background: linear-gradient(180deg, #141414, #0c0c0c);
+  box-shadow: -4px 0 12px rgba(0,0,0,0.5);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  z-index:100;
+  border-left:1px solid rgba(255,140,0,0.1);
+  overflow-y:auto;
 }
+.sidebar.hidden{transform:translateX(100%);opacity:0;pointer-events:none;}
 
-.sidebar.visible {
-  transform: translateX(0); /* يظهر */
-}
-
-/* زر فتح الشريط */
 .toggle-btn {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  z-index: 10000;
-  background: var(--accent);
-  color: #111;
-  border: none;
-  padding: 10px 14px;
-  border-radius: 8px;
-  font-size: 20px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  position:fixed; top:20px; right:20px;
+  background:var(--accent); color:#fff;
+  border:none; padding:8px 12px; font-size:22px;
+  border-radius:8px; cursor:pointer; z-index:150;
+  transition: all 0.3s ease;
 }
-
-.toggle-btn.move-left {
-  transform: translateX(-250px);
-}
-
+.toggle-btn:hover{background:#ff9933; transform:scale(1.05);}
+.toggle-btn.move-left{transform:translateX(-250px);}
 
 .brand{display:flex; align-items:center; gap:10px; padding:8px 10px;}
 .brand .logo{width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent),#ffae6b);color:#1b1b1b;font-weight:700;}
@@ -108,19 +64,7 @@ a{color:inherit;text-decoration:none;}
 .title-illum{font-size:40px;font-weight:800;color:var(--accent);text-shadow:0 6px 40px rgba(255,122,26,0.12),0 0 20px rgba(255,170,110,0.04);}
 .subtitle{color:var(--muted);margin-top:6px;}
 
-.shelf {
-  width: 100%; /* عرض كامل */
-  overflow-x: auto; /* إذا كانت العناصر كثيرة، تظهر scroll أفقية بشكل محدود */
-  display: flex;
-  gap: 10px;
-  padding: 8px;
-  border-radius: 10px;
-  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-}
-
-.shelf > div {
-  flex: 0 0 auto; /* يمنع تمدد العنصر */
-}
+.shelf{margin-top:12px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:10px;border-radius:12px;display:flex;justify-content:space-between;flex-wrap:wrap;}
 
 .entities{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px; justify-content:center;}
 .entities .entity{
@@ -166,16 +110,12 @@ a{color:inherit;text-decoration:none;}
 .contact-us button a{color:#111;}
 
 /* Responsive */
-@media(max-width:800px){
+@media(max-width:1000px){
   .app{flex-direction:column;}
   .main{margin-right:0;}
-  .hero-left { width: 100%; }
-  .hero{flex-direction:column;  gap: 12px;}
+  .hero{flex-direction:column;}
   .sections{grid-template-columns:1fr;}
-  .entities{justify-content:center;}
+  .entities{justify-content:space-around;}
   .art-row{flex-direction:column;align-items:center;}
   .art img{width:70%;}
 }
-
-
-
