@@ -28,43 +28,18 @@
       showSection(key);
       document.getElementById('contentSections').scrollIntoView({behavior:'smooth'});
       sidebar.classList.add('hidden');
-      toggleBtn.classList.remove('move-left');
+      toggleBtn.style.transform = 'translateX(0)';
     });
   });
 
   // Sidebar toggle
   const sidebar = document.querySelector('.sidebar');
   const toggleBtn = document.querySelector('.toggle-btn');
-
-  // إغلاق الشريط عند الضغط في أي مكان خارج
-  document.addEventListener('click', (e) => {
-    if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
-      sidebar.classList.add('hidden');
-      toggleBtn.classList.remove('move-left');
-    }
+  toggleBtn.addEventListener('click', ()=>{
+    sidebar.classList.toggle('hidden');
+    toggleBtn.style.transform = sidebar.classList.contains('hidden') ? 'translateX(0)' : 'translateX(-250px)';
   });
 
-  // إغلاقه أيضًا عند الضغط على أي قسم داخله
-  sidebar.addEventListener('click', (e) => {
-    if (e.target.classList.contains('nav-item')) {
-      sidebar.classList.add('hidden');
-      toggleBtn.classList.remove('move-left');
-    }
-  });
-
-  
-  toggleBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-
-  // فقط حرّك للأعلى إذا الشريط مغلق
-  const willOpen = sidebar.classList.contains('hidden');
-  if (willOpen) {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  sidebar.classList.toggle('hidden');
-  toggleBtn.classList.toggle('move-left');
-});
   // Updates ticker
   const updates = [
     'تم الإعلان عن مسابقة جديدة في لجنة المسابقات — شارك الآن!',
@@ -82,6 +57,4 @@
   setInterval(tick,4000);
 
 })();
-
-
 
